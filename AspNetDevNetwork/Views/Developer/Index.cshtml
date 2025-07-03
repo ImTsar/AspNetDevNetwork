@@ -1,0 +1,29 @@
+﻿@model AspNetDevNetwork.Models.Developer
+
+@{
+    ViewData["Title"] = "Developer Registration";
+}
+
+<h2 class="dev-registration-title">ASP.NET Developer Registration</h2>
+
+<form class="dev-registration-form" asp-action="BecomeDeveloper" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" style="color:red"></span>
+    </div>
+    <br />
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" style="color:red"></span>
+    </div>
+    <br />
+    <button type="submit">Become a Developer</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
